@@ -6,31 +6,3 @@
 export const increment = ({ commit, state }) => {
   commit('increment', 1)
 }
-
-export const updateMessage = ({ commit, state }, e) => {
-  commit('updateMessage', e.target.value)
-}
-
-export const decrement = ({ commit, state }) => {
-  commit('decrement', 1)
-}
-
-export const addNote = ({ commit, state }) => {
-  commit('ADD_NOTE')
-}
-
-export const editNote = ({ commit, state }, e) => {
-  commit('EDIT_NOTE', e.target.value)
-}
-
-export const deleteNote = ({ commit, state }) => {
-  commit('DELETE_NOTE')
-}
-
-export const updateActiveNote = ({ commit, state }, note) => {
-  commit('SET_ACTIVE_NOTE', note)
-}
-
-export const toggleFavorite = ({ commit, state }) => {
-  commit('TOGGLE_FAVORITE')
-}

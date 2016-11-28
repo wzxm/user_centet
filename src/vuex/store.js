@@ -10,6 +10,7 @@ Vue.use(Vuex)
 const state = {
   // TODO 放置初始状态
   count: 0,
+  pageState: false,
   notes: [],
   activeNote: {}
 }
@@ -20,55 +21,12 @@ const mutations = {
   increment (state, amount) {
     state.count = state.count + amount
   },
-  updateMessage (state, message) {
-    state.count = Number(message)
-  },
-  decrement (state, amount) {
-    state.count = state.count - amount
-  },
-  DECREMENT (state, amount) {
-    state.count = state.count - amount
-  },
-  ADD_NOTE (state) {
-    const newNote = {
-      text: 'New Note' + state.count,
-      favorite: false
+  UPDATESTATE (state) {
+    if (state.pageState) {
+      state.pageState = false
+    } else {
+      state.pageState = true
     }
-    state.notes.push(newNote)
-    state.activeNote = newNote
-    state.count++
-  },
-
-  EDIT_NOTE (state, text) {
-    if (state.notes.length === 0) {
-      const newNote = {
-        text: text,
-        favorite: false
-      }
-      state.notes.push(newNote)
-      state.activeNote = newNote
-      state.count++
-    }
-    state.activeNote.text = text
-  },
-
-  DELETE_NOTE (state) {
-    let index = state.notes.indexOf(state.activeNote)
-    if (index !== -1) {
-      state.notes.splice(index, 1)
-      state.activeNote = {}
-      // if (index !== 0) {
-      //   state.activeNote = state.notes[index - 1]
-      // }
-    }
-  },
-
-  TOGGLE_FAVORITE (state) {
-    state.activeNote.favorite = !state.activeNote.favorite
-  },
-
-  SET_ACTIVE_NOTE (state, note) {
-    state.activeNote = note
   }
 }
 

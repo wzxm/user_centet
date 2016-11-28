@@ -5,8 +5,4 @@
  */
 export const getCount = state => state.count
 
-export const notes = state => state.notes
-
-export const activeNote = state => state.activeNote
-
-export const activeNoteText = state => state.activeNote.text
+export const pageState = state => state.pageState
