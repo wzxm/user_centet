@@ -5,6 +5,7 @@
 > 使用 vue-cli 构建 webpack + vue 项目，增加了vue-router2.0
 
 > 使用路由懒加载功能
+
 ```
 const Foo = resolve => require(['./Foo.vue'], resolve)
 
